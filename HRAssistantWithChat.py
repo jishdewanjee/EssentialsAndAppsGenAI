@@ -198,3 +198,33 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+'''
+Conclusion
+
+This project focused on building an AI-powered HR assistant using Nestlé’s HR policy document by using retrieval-augmented generation with a language model. 
+Loaded the PDF, split it into chunks, converted them into embeddings, and stored them in a vector database so the system could retrieve relevant information. 
+Then integrated the Qwen2.5-3B-Instruct model through Hugging Face and connected everything using LangChain to generate answers based only on the document. 
+I built a Gradio interface so users could interact with it. 
+Finally the system works well for answering policy-related questions and stays grounded in the document, which was the main goal. 
+Getting everything into a single script that runs from the command line also made it feel like a complete application rather than just a small experiment.
+'''
+
+'''
+Summary
+
+### Summary
+
+This project had a bigger learning curve than I initially expected because it required understanding how multiple components work together instead of just using a model directly. 
+I had to experiment with chunk sizes, retrieval settings, and model parameters like temperature and token limits to get better performance and more accurate responses. 
+One of the main challenges was dealing with hallucinations, where the model would add information not present in the document, 
+which I improved by refining the prompt to be more strict and limiting responses to only the provided context. 
+I also made changes to the retrieval process by adjusting chunk size, increasing the number of retrieved documents, 
+and resetting the vector database to avoid stale data issues. Performance was initially slow until I optimized the model settings. 
+Another issue I ran into was that the system would show retrieved context even when no valid answer existed, which I fixed by updating the logic to only display context when a real answer is found. 
+I also realized that the system doesn’t handle certain types of questions well, like counting or very specific queries, because it only retrieves a limited number of chunks. 
+Overall, this project helped me understand the difference between just running a model and actually building a structured AI system, and it gave me a much better sense of how to control model behavior, 
+improve retrieval quality, and make the system more reliable and user-friendly.
+'''    
